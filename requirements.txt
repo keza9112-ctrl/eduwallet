@@ -22,8 +22,5 @@ python-jose==3.3.0
 
 tzdata==2024.2
 
-pandas==2.2.2
 numpy==1.26.4
-
-jq==1.6
-typer==0.12.3
+pandas==2.2.2
