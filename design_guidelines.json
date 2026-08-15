@@ -1,0 +1,114 @@
+{
+  "theme": "Light",
+  "archetype": "Organic & Earthy mixed with High-Contrast Swiss",
+  "typography": {
+    "headings": {
+      "family": "Manrope",
+      "weights": ["500", "700", "800"],
+      "tracking": "tracking-tight"
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "tracking": "tracking-normal"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "purpose": "Transaction IDs, OTPs, Amounts, Technical Data"
+    },
+    "banned": ["Inter", "Roboto", "Space Grotesk", "Open Sans"]
+  },
+  "colors": {
+    "primary": {
+      "hex": "#1A4331",
+      "tailwind": "bg-[#1A4331]",
+      "usage": "Brand anchor, Primary CTAs, Header backgrounds (if dark), Key balances"
+    },
+    "secondary": {
+      "hex": "#E25A3C",
+      "tailwind": "bg-[#E25A3C]",
+      "usage": "Secondary CTAs, Alert dots, Kinetic triggers, Mobile Money deposit buttons"
+    },
+    "background": {
+      "hex": "#F9F9F8",
+      "tailwind": "bg-[#F9F9F8]",
+      "usage": "Global app background. Warm tinted off-white."
+    },
+    "surface": {
+      "hex": "#FFFFFF",
+      "tailwind": "bg-white",
+      "usage": "Cards, Modals, Dropdowns. Must include a 1px border."
+    },
+    "text": {
+      "main": "#171717",
+      "muted": "#525252"
+    },
+    "status": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "banned": ["#7351B7", "#1B93A4"]
+  },
+  "layouts": {
+    "dashboard": {
+      "pattern": "High Density Grid (Bento)",
+      "strategy": "Top-left hero metric (Wallet Balance). Progressive disclosure: show summary first, detail on demand.",
+      "gap": "gap-4 md:gap-6",
+      "admin_patron": "Modular widgets, Cards for glanceable KPIs, wide Tables for investigation.",
+      "student_parent": "Mobile-first, simple vertical flow with bento grid on desktop."
+    },
+    "surfaces": {
+      "cards": "Flat solid backgrounds. Max 8px border-radius (`rounded-md`). 1px subtle border (`border-black/5` or `border-neutral-200`). Minimal to zero drop shadows.",
+      "headers": "Crystal Glassmorphism if scrolling: `backdrop-blur-xl bg-white/80 border-b border-black/5`. Solid if not scrolling."
+    },
+    "spacing": "Generous Spacing Philosophy. Use p-6 to p-8 inside cards. No cramped elements."
+  },
+  "components": {
+    "strategy": "Use pure HTML + Tailwind for structural layouts. Use customized Shadcn for interactivity (Tabs, Select, Dialogs, Tables).",
+    "forms": "Use Shadcn Form, Input, Select. Never use native inputs.",
+    "buttons": "Pill-shaped (`rounded-full`) or sharp (`rounded-md`). Explicit hover states required (e.g., `hover:bg-[#123022] hover:text-white`).",
+    "tables": "Clean, technical look. Border-collapse, subtle borders on bottom of rows. Highlight row on hover.",
+    "charts": "Use Recharts or Shadcn charts. Color-blind friendly palettes. Single-metric focus.",
+    "icons": "Use `lucide-react`. 20-24px size. Stroke width 1.5 for elegance."
+  },
+  "motion": {
+    "hover": "Slight lift (`-translate-y-[1px]`) and subtle shadow (`shadow-sm`) for cards.",
+    "transitions": "Use specific properties: `transition-colors duration-200`, `transition-transform`. NEVER use `transition-all`.",
+    "loading": "Skeleton loaders matching the shape of the content, or subtle pulse. No full screen spinners if possible."
+  },
+  "visual_enhancers": {
+    "borders": "Expose the grid. Use 1px borders to separate dashboard zones (The Technical Look).",
+    "texture": "Add an SVG noise overlay with 2-3% opacity over the main hero balance card to remove digital flatness."
+  },
+  "image_urls": {
+    "campus_background": {
+      "url": "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b",
+      "description": "Clean school campus architecture. Use for Login/Register split-screen backgrounds."
+    },
+    "student_profile": {
+      "url": "https://images.unsplash.com/photo-1492462543947-040389c4a66c",
+      "description": "Student on campus. Use for placeholder profile or parent dashboard 'Linked Student' cards."
+    },
+    "mobile_payment": {
+      "url": "https://images.pexels.com/photos/5239819/pexels-photo-5239819.jpeg",
+      "description": "Contactless mobile payment. Use for Deposit Flow marketing or empty states."
+    }
+  },
+  "instructions_to_main_agent": [
+    "You MUST NOT center align the app container. Do not add `.App { text-align: center; }`.",
+    "NEVER use emojis (🤖, 💡, 🎯, etc.) for icons or empty states. Use lucide-react icons.",
+    "All interactive elements (buttons, inputs, menu items, table rows) MUST include a `data-testid` attribute (e.g., `data-testid='deposit-submit-btn'`).",
+    "Do NOT use complete `transparent` backgrounds on headers or dropdowns. Ensure solid or glassmorphism backgrounds for readability.",
+    "Do not use generic 'card' looks with huge drop shadows. Use flat designs with 1px borders.",
+    "Always explicitly set text color on hover. Do not rely on inheritance.",
+    "Use sonner for toast notifications.",
+    "Apply `IBM Plex Mono` to all currency amounts and transaction IDs to ensure tabular lining and financial precision.",
+    "Never leave empty image placeholders (like via.placeholder.com). Use the provided image URLs.",
+    "Ensure the dashboard uses a 'progressive disclosure' pattern—show top KPIs (balance) first, then detailed tables below."
+  ],
+  "accessibility": {
+    "contrast": "Maintain WCAG AA (4.5:1 for normal text). Test text over the Forest Green primary color.",
+    "focus": "Focus states must have higher contrast than default. e.g., `focus:ring-2 focus:ring-[#1A4331] focus:ring-offset-2`."
+  }
+}
